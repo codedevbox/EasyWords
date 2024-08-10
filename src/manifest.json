@@ -1,0 +1,29 @@
+{
+    "name": "EasyWord",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["storage"],
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": {
+            "16": "images/ico16.png",
+            "48": "images/ico48.png",
+            "128": "images/ico128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background/background.ts"
+    },
+    "icons": {
+        "16": "images/ico16.png",
+        "48": "images/ico48.png",
+        "128": "images/ico128.png"
+      },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content/main.ts"],
+            "run_at": "document_idle"
+        }
+    ]
+}
